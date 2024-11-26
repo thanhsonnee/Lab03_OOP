@@ -7,3 +7,12 @@ Trong Java, ta có thể định nghĩa nhiều phương thức khởi tạo v�
 Mỗi phương thức khởi tạo sẽ có một danh sách tham số khác nhau, và Java sẽ phân biệt chúng dựa trên số lượng và kiểu của các tham số khi gọi.
 
 Do vậy, ta có thể tạo một phương thức khởi tạo nhận tiêu đề của DVD và một phương thức khởi tạo khác nhận thể loại, miễn là danh sách tham số của chúng khác nhau.
+
+LAB03_OOP
+1. After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+Phương thức swap chỉ thay đổi tham chiếu cục bộ (o1 và o2) bên trong phương thức, nhưng không thay đổi tham chiếu thực tế của 
+jungleDVD và cinderellaDVD trong phương thức main. Do đó, tiêu đề của hai đối tượng không bị ảnh hưởng và vẫn giữ nguyên như ban đầu.
+2. After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+Trong phương thức changeTitle, giá trị thuộc tính title của đối tượng jungleDVD được thay đổi trực tiếp thông qua phương thức setTitle. 
+Vì jungleDVD là một tham chiếu tới đối tượng thực trong bộ nhớ, nên bất kỳ sự thay đổi nào trên thuộc tính của đối tượng này sẽ được phản ánh
+ngay trong chương trình. Do đó, tiêu đề của jungleDVD đã bị thay đổi thành tiêu đề của cinderellaDVD.
