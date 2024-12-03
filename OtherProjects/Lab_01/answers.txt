@@ -1,0 +1,25 @@
+1.What happens if users choose “Cancel”? :
+
+Vì câu lệnh 
+(option == JOptionPane.YES_OPTION ? "Yes" : "No")
+chỉ kiểm tra xem người dùng có chọn "Yes" (giá trị JOptionPane.YES_OPTION) hay không,
+nên nếu người dùng chọn "No" hoặc "Cancel", câu lệnh trên sẽ trả về "No", vì điều kiện chỉ so sánh với giá trị YES_OPTION.
+
+2.How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do”and “I don’t”"?
+
+Để tùy chỉnh các lựa chọn hiển thị trong hộp thoại JOptionPane, bạn có thể sử dụng phương thức JOptionPane.showOptionDialog() thay vì JOptionPane.showConfirmDialog(). Phương thức này cho phép bạn tùy chỉnh hoàn toàn các nút hiển thị, ví dụ như chỉ có hai tùy chọn "Yes" và "No", hoặc các lựa chọn khác như "I do" và "I don’t".
+Cách tùy chỉnh các lựa chọn:
+Phương thức showOptionDialog(): Phương thức này cho phép ta tùy chỉnh các nút trong hộp thoại bằng cách truyền vào một mảng chứa các chuỗi đại diện cho các lựa chọn mà ta muốn hiển thị. Cú pháp tổng quát như sau:
+
+JOptionPane.showOptionDialog(parentComponent, message, title, optionType, messageType, icon, options, initialValue);
+
+Trong đó:
+parentComponent: Thành phần cha của hộp thoại (có thể là null nếu không có thành phần cha cụ thể).
+message: Nội dung của hộp thoại.
+title: Tiêu đề của hộp thoại.
+optionType: Kiểu lựa chọn (ví dụ: JOptionPane.YES_NO_OPTION).
+messageType: Kiểu thông báo (ví dụ: JOptionPane.QUESTION_MESSAGE).
+icon: Icon hiển thị trong hộp thoại (có thể là null).
+options: Mảng chứa các chuỗi đại diện cho các lựa chọn mà người dùng có thể chọn.
+initialValue: Giá trị mặc định của nút sẽ được chọn khi hộp thoại xuất hiện (có thể là null nếu không muốn chọn trước).
+
